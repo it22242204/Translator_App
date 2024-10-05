@@ -69,7 +69,7 @@ const Translator = () => {
             outputText: result.translated_text[outputLang],
           }),
         };
-        fetch("http://localhost:5000/api/tasks", requestOptions)
+        fetch("http://localhost:4000/api/tasks", requestOptions)
           .then((response) => response.json())
           .then((data) => {
             //TODO

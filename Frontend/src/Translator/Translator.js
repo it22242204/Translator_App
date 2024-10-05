@@ -3,17 +3,26 @@ import "./Translator.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { addTaskToServer } from "../slices/tasksSlice";
 import { useDispatch } from "react-redux";
+import TextToSpeech from "../components/Voice/TextToSpeech";
+import SpeechToText from "../components/Voice/SpeechToText";
+//jeethus's
+import { useEffect } from "react"; 
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faMicrophone, faStop, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+//jeethu's
 
 const Translator = () => {
   const dispatch = useDispatch();
 
   const [inputText, setInputText] = useState(""); // Text input state
-  const [inputLang, setInputLang] = useState("auto"); // Input language state (auto-detect by default)
+  const [inputLang, setInputLang] = useState(""); // Input language state (auto-detect by default)
   const [outputLang, setOutputLang] = useState("si"); // Output language state (default to Sinhala)
   const [outputText, setOutputText] = useState(""); // Translated text output state
   const [isTranslated, setIsTranslated] = useState(null); // Translation status state
   const [selectedImage, setSelectedImage] = useState(null); // Image input state
   const [translatedImageText, setTranslatedImageText] = useState(""); // Image translation output state
+
 
   // Text translation function using RapidAPI
   const translateText = async (e) => {
@@ -60,7 +69,7 @@ const Translator = () => {
             outputText: result.translated_text[outputLang],
           }),
         };
-        fetch("http://localhost:4000/api/tasks", requestOptions)
+        fetch("http://localhost:5000/api/tasks", requestOptions)
           .then((response) => response.json())
           .then((data) => {
             //TODO
@@ -116,7 +125,33 @@ const Translator = () => {
     setInputText("");
     setOutputText("");
     setIsTranslated(null);
+    resetTranscript();
   };
+
+  //jeethu's for a try
+  const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
+  const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
+  const { transcript, resetTranscript } = useSpeechRecognition(); // Hook to manage speech recognition transcript
+  const [listening, setListening] = useState(false); 
+  //const [language, setLanguage] = useState('en-US'); // Single language state
+
+  useEffect(() => { 
+    if (listening) {
+        try {
+            // Start continuous listening
+            SpeechRecognition.startListening({ continuous: true, language: sourceLanguage }); 
+        } catch (error) {
+            console.error('Error starting speech recognition:', error); 
+        }
+    } else {
+        // Stop listening and assign the transcript to inputText if transcript exists
+        SpeechRecognition.stopListening(); 
+        if (transcript !== "") {
+            setInputText(transcript); // Assign transcript to inputText after stopping listening
+        }
+    }
+}, [listening, sourceLanguage, transcript]); // Include transcript in the dependencies
+  //jeethu's end
 
   return (
     <section className="translator">
@@ -126,6 +161,32 @@ const Translator = () => {
       <div className="row-wrapper">
         <div className="translator-container input-lang">
           <div className="top-row">
+
+            {/* jeethu's */}
+            {/* <SpeechToText></SpeechToText> */}
+            <label htmlFor="language-select">Select Language:</label>
+                <select
+                    id="language-select"
+                    value={sourceLanguage}
+                    onChange={(e) => setSourceLanguage(e.target.value)} // Update language state
+                >
+                    <option value="en-US">English</option>
+                    <option value="si-LK">Sinhala</option>
+                </select>
+            <button onClick={(e) => { // Button to start listening
+                e.preventDefault(); 
+                setListening(true); 
+            }}>
+                <FontAwesomeIcon icon={faMicrophone} /> {/* Microphone icon */}
+            </button>
+            <button onClick={(e) => { // Button to stop listening
+                e.preventDefault(); 
+                setListening(false); 
+            }}>
+                <FontAwesomeIcon icon={faStop} /> {/* Stop icon */}
+            </button>
+            <TextToSpeech text={transcript} language={sourceLanguage} /> {/*Render TextToSpeech component*/}
+            {/* jeethu's end */}
             <button
               className="btn btn-primary btn-translate"
               onClick={translateText}
@@ -134,12 +195,16 @@ const Translator = () => {
             </button>
           </div>
           <form className="input-form">
-            <textarea
-              className="text-box"
-              placeholder="Enter text (any language)"
-              onChange={(e) => setInputText(e.target.value)}
-              value={inputText}
-            ></textarea>
+          <textarea
+            className="text-box"
+            placeholder="Enter text"
+            value={listening ? transcript : inputText} // Set value based on listening state
+            onChange={(e) => {
+              if (!listening) {
+                setInputText(e.target.value); // Update the inputText only if not listening
+              }
+            }}
+          ></textarea>
             {inputText !== "" && (
               <AiOutlineClose
                 className="icon-btn close-btn"
@@ -162,6 +227,8 @@ const Translator = () => {
               <option value="en">English</option>
             </select>
           </div>
+          {/* jeethu's */}
+          <TextToSpeech text={outputText} language={outputLang} /> {/*speaker for text to speech*/}
           <p className="text-box output-box">
             {isTranslated === false ? (
               <span className="output-placeholder translation-error">

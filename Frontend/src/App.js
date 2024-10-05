@@ -31,12 +31,18 @@ function App() {
           <Route path='/AddBookMark' element={<AddBookmark/>}/>
           <Route path='/bookmarkdetails' element={<BookMarkDetails/>}/>
           <Route path="/updatebookmark/:id" element={<UpdateBookmark/>}/>
+<<<<<<< HEAD
           {/* Notes */}
+=======
+>>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
           <Route path='/addnote' element={<Addnote/>}/>
           <Route path='/notedetails' element={<Notedetails/>}/>
           <Route path="/notedetails/:id" element={<Updatenote/>}/>
+<<<<<<< HEAD
           {/*Quiz  */}
           
+=======
+>>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
           <Route path='/addnewquiz' element={<AddQuiz/>}/>
           <Route path='/displayquiz' element={<DisplayQuiz/>}/>
           <Route path='/quizintro' element={<QuizIntro/>}/>
@@ -50,7 +56,10 @@ function App() {
               </ProtectedRoute>
             }
           />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
         </Routes>
       </React.Fragment>
     </div>

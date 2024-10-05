@@ -3,6 +3,7 @@ import "./Translator.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { addTaskToServer } from "../slices/tasksSlice";
 import { useDispatch } from "react-redux";
+<<<<<<< Updated upstream
 import TextToSpeech from "../components/Voice/TextToSpeech";
 import SpeechToText from "../components/Voice/SpeechToText";
 //jeethus's
@@ -11,9 +12,13 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faMicrophone, faStop, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 //jeethu's
+=======
+import { useNavigate } from "react-router-dom";
+>>>>>>> Stashed changes
 
 const Translator = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [inputText, setInputText] = useState(""); // Text input state
   const [inputLang, setInputLang] = useState(""); // Input language state (auto-detect by default)
@@ -27,11 +32,6 @@ const Translator = () => {
   // Text translation function using RapidAPI
   const translateText = async (e) => {
     e.preventDefault();
-    // console.log({ inputText, outputText });
-    // dispatch(addTaskToServer({ inputText, outputText }));
-    // setInputText('')
-    // setOutputText('')
-
     const url = "https://nlp-translation.p.rapidapi.com/v1/translate";
 
     const data = new URLSearchParams(); // Use URLSearchParams instead of FormData for API request
@@ -103,7 +103,6 @@ const Translator = () => {
 
     try {
       const response = await fetch("/api/process_image", {
-        // Adjust the endpoint to match your Flask or FastAPI route
         method: "POST",
         body: formData,
       });
@@ -128,6 +127,7 @@ const Translator = () => {
     resetTranscript();
   };
 
+<<<<<<< Updated upstream
   //jeethu's for a try
   const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
   const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
@@ -152,6 +152,22 @@ const Translator = () => {
     }
 }, [listening, sourceLanguage, transcript]); // Include transcript in the dependencies
   //jeethu's end
+=======
+  const handleAddBookmark = () => {
+    console.log("Navigating to AddBookmark with data:", {
+      inputText,
+      translatedText: outputText,
+    });
+  
+    navigate("/AddBookMark", {
+      state: {
+        inputText,
+        translatedText: outputText,
+      },
+    });
+  };
+  
+>>>>>>> Stashed changes
 
   return (
     <section className="translator">
@@ -212,6 +228,16 @@ const Translator = () => {
               />
             )}
           </form>
+          <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button className="btn btn-primary me-md-2" type="button">AddNotes</button>
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={handleAddBookmark} // Call handleAddBookmark directly
+            >
+              AddBookMark
+            </button>
+          </div>
         </div>
 
         <div className="translator-container output-lang">

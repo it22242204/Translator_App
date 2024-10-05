@@ -1,0 +1,32 @@
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: black;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7em;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+    background-color: #28a745; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 0.8em; 
+    transition: background-color 0.3s; 
+}
+
+.btn-submit:hover {
+    background-color: #218838; 
+}

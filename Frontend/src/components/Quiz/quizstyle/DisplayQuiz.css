@@ -1,0 +1,124 @@
+body {
+    background-color: #faf593;
+    color: #fff; 
+    font-size: 1em; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 2em;
+    background-color: black; 
+    color: white; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    margin: 2em auto;
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.3em;
+    
+}
+
+h1 {
+    color: #ff992b; /*'Weekly Quiz Challenge' */
+    text-align: center;
+    
+}
+h2 {
+    color: #faff5a; 
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 3em;
+}
+
+h3 {
+    color: #45aa06; 
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+h4 {
+    color: #e41a1a; 
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.quiz-item {
+    margin-bottom: 2em;
+    text-align: left;
+}
+
+.quiz-item p {
+    font-size: 0.9em; /* Slightly smaller font size for text */
+    margin: 0.5em 0;
+}
+
+.quiz-item label {
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+}
+
+.btn {
+    padding: 0.3em 1em; /* Reduced padding for smaller size */
+    border: none;
+    border-radius: 0.3em;
+    font-size: 0.8em; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color:#035fc2;
+}
+.btn-secondary {
+    background-color: #d91414;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #c61010;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Style for radio inputs */
+input[type="radio"] {
+    accent-color: gray; /* Set the default color of the radio button */
+    
+}
+
+/* Style for checked radio inputs */
+input[type="radio"]:checked {
+    accent-color: green; /* Set the color of the radio button when selected */
+    color: green; /* Set the text color when selected */
+}
+
+/* Style for the label text */
+.quiz-item label {
+    color: gray; 
+    cursor: pointer;
+    display: block;
+}
+
+/* Change label text color when radio is checked */
+input[type="radio"]:checked + label {
+    accent-color: green;
+}

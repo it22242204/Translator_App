@@ -8,7 +8,11 @@ const cors = require("cors")
 // import routes
 const taskRoutes = require('./routes/taskRoutes')
 const router=require("./routes/BookMarkRoutes");
+<<<<<<< Updated upstream
 const noterouter=require('./routes/Noteroutes');
+=======
+const quizRouter = require("./Routes/quizgameroutes.js");
+>>>>>>> Stashed changes
 
 // Mddleware
 app.use(cors())
@@ -21,8 +25,12 @@ app.use(express.json());
 //db connection
 app.use("/api/tasks",taskRoutes)
 app.use("/BookMark",router);
+<<<<<<< Updated upstream
 app.use("/notes",noterouter);
 
+=======
+app.use("/Backend/quiz",quizRouter);
+>>>>>>> Stashed changes
 
 
 mongoose

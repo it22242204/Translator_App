@@ -4,7 +4,7 @@ import { useReactToPrint } from 'react-to-print';
 import BookMarkDetail from '../BookMarkDetail/BookMarkDetail';
 import Header from '../../../Header/Header';
 import './BookMarkDetails.css';
-import { Link } from 'react-router-dom';
+
 
 const URL = 'http://localhost:4000/BookMark';
 
@@ -84,9 +84,7 @@ function BookMarkDetails() {
               ))}
           </div>
         )}
-         <Link to={`/AddBookMark`}>
-          <button className="btn no-print">Add BookMark</button>
-        </Link>
+
       </div>
     </div>
   );

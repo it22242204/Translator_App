@@ -1,31 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../../Header/Header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './AddBookMark.css'; 
 
 function AddBookmark() {
-  const history = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Destructure inputText and translatedText from location.state with default values
+  const { inputText = "", translatedText = "" } = location.state || {};
+
+  console.log("Received data:", { inputText, translatedText }); // Log received data
+
   const [inputs, setInputs] = useState({
     name: "",
-    originalText: "",
-    translatedText: "",
-    dateCreated: new Date().toISOString(),
+    originalText: inputText, // Set originalText from the incoming prop
+    translatedText: translatedText, // Set translatedText from the incoming prop
+    dateCreated: new Date().toISOString(), // Current date in ISO format
   });
+
+  // Log the initial state of inputs
+  useEffect(() => {
+    console.log("Initial inputs state:", inputs);
+  }, [inputs]);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    console.log("Updated inputs state:", { ...inputs, [e.target.name]: e.target.value }); // Log updated state
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    sendRequest().then(() => {
+    try {
+      await sendRequest();
       alert("Bookmark added successfully!");
-      history('/bookmarkdetails');
-    });
+      navigate('/bookmarkdetails');
+    } catch (error) {
+      console.error("Error adding bookmark:", error);
+      alert("There was an error adding the bookmark.");
+    }
   };
 
   const sendRequest = async () => {
@@ -35,6 +52,12 @@ function AddBookmark() {
       translatedText: String(inputs.translatedText),
       dateCreated: String(inputs.dateCreated),
     });
+    console.log("Bookmark data sent to server:", {
+      name: inputs.name,
+      originalText: inputs.originalText,
+      translatedText: inputs.translatedText,
+      dateCreated: inputs.dateCreated,
+    }); // Log data sent to the server
   };
 
   return (
@@ -60,7 +83,7 @@ function AddBookmark() {
               name="originalText"
               className="form-control"
               onChange={handleChange}
-              value={inputs.originalText}
+              value={inputs.originalText} // Display originalText
               required
             />
           </div>
@@ -70,7 +93,7 @@ function AddBookmark() {
               name="translatedText"
               className="form-control"
               onChange={handleChange}
-              value={inputs.translatedText}
+              value={inputs.translatedText} // Display translatedText
               required
             />
           </div>
@@ -80,7 +103,7 @@ function AddBookmark() {
               type="text"
               className="form-control"
               name="dateCreated"
-              value={new Date(inputs.dateCreated).toLocaleDateString()}
+              value={new Date(inputs.dateCreated).toLocaleDateString()} // Display formatted date
               readOnly
             />
           </div>

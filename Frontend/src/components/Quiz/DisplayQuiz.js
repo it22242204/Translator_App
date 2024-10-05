@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './quizstyle/DisplayQuiz.css';
+import '../Quiz/quizstyle/DisplayQuiz.css';
 import Nav from '../Home/NavBar/Nav';
 
 function DisplayQuiz() {

@@ -194,7 +194,7 @@ const Translator = () => {
                 e.preventDefault(); 
                 setListening(true); 
             }}>
-                <FontAwesomeIcon icon={faMicrophone} /> {/* Microphone icon */}
+                <FontAwesomeIcon icon={faMicrophone} style={{ color: 'green' }}  /> {/* Microphone icon */}
             </button>
             <button onClick={(e) => { // Button to stop listening
                 e.preventDefault(); 

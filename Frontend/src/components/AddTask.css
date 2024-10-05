@@ -1,0 +1,106 @@
+/* AddTask_pay.css */
+
+/* Center the form */
+.form-center_pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Style the form container */
+.form-wrapper_pay {
+  background-color: #f7f7f7;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Style the form labels */
+.form-label_pay {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the form controls */
+.form-control_pay {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control_pay:focus {
+  border-color: #007bff;
+}
+
+/* Style error messages */
+.error-message_pay {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* Style the primary button */
+.btn-primary_pay {
+  background-color: #368f71;
+  border-color: #245346;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary_pay:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Style the premium button */
+.premium-button_pay {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4d8e81;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.premium-button_pay:hover {
+  color: #1a472a;
+}
+
+.card-form-container_pay {
+  position: relative;
+}
+
+.card-img-container_pay {
+  position: relative;
+}
+
+.card-form_pay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Adjust the width as needed */
+  max-width: 600px; /* Add a max-width if necessary */
+}
+
+.card-image_pay {
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Make sure it's a block element */
+  margin: 0 auto; /* Center the image horizontally */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}

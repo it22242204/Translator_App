@@ -1,0 +1,251 @@
+.translator {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.app-name {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #80b4e1;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.row-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.translator-container {
+  width: 48%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-box {
+  min-height: 150px;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  resize: none;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.input-form {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.text-box:focus {
+  border-color: #007bff;
+}
+
+textarea::placeholder,
+.output-placeholder {
+  color: #888;
+  user-select: none;
+}
+
+.icon-btn {
+  position: absolute;
+  font-size: 24px;
+  cursor: pointer;
+  top: 10px;
+  right: 15px;
+  transition: color 0.2s ease-in-out;
+}
+
+.icon-btn:hover {
+  color: #007bff;
+}
+
+.output-box {
+  min-height: 150px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.output-placeholder {
+  color: #888;
+}
+
+.top-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.btn-translate {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-translate:hover {
+  background-color: #0056b3;
+}
+
+.form-select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.translation-error {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+@media (max-width: 1279px) {
+  .translator {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .row-wrapper {
+    flex-direction: column;
+  }
+
+  .translator-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-box, .output-box {
+    font-size: 14px;
+  }
+
+  .btn-translate {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .form-select {
+    width: 100%;
+  }
+}
+
+/* New CSS to center the .translator-container for Image Translation Output */
+.centered-translator-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-uploader-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-uploader-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+}
+
+.image-upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload-form input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px dashed #007bff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.image-upload-form input[type="file"]:hover {
+  border-color: #0056b3;
+}
+
+.btn-upload {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover {
+  background-color: #0056b3;
+}
+
+p {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .image-uploader-container {
+    width: 90%;
+  }
+
+  .centered-translator-container {
+    width: 90%;
+    top: 40%; /* Adjust the top position for smaller screens */
+  }
+}

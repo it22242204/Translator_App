@@ -3,7 +3,6 @@ import "./Translator.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { addTaskToServer } from "../slices/tasksSlice";
 import { useDispatch } from "react-redux";
-<<<<<<< Updated upstream
 import TextToSpeech from "../components/Voice/TextToSpeech";
 import SpeechToText from "../components/Voice/SpeechToText";
 //jeethus's
@@ -12,9 +11,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faMicrophone, faStop, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 //jeethu's
-=======
 import { useNavigate } from "react-router-dom";
->>>>>>> Stashed changes
 
 const Translator = () => {
   const dispatch = useDispatch();
@@ -127,7 +124,6 @@ const Translator = () => {
     resetTranscript();
   };
 
-<<<<<<< Updated upstream
   //jeethu's for a try
   const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
   const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
@@ -152,7 +148,6 @@ const Translator = () => {
     }
 }, [listening, sourceLanguage, transcript]); // Include transcript in the dependencies
   //jeethu's end
-=======
   const handleAddBookmark = () => {
     console.log("Navigating to AddBookmark with data:", {
       inputText,
@@ -167,7 +162,6 @@ const Translator = () => {
     });
   };
   
->>>>>>> Stashed changes
 
   return (
     <section className="translator">

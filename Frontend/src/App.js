@@ -30,12 +30,10 @@ function App() {
           <Route path='/AddBookMark' element={<AddBookmark/>}/>
           <Route path='/bookmarkdetails' element={<BookMarkDetails/>}/>
           <Route path="/updatebookmark/:id" element={<UpdateBookmark/>}/>
-<<<<<<< Updated upstream
           <Route path='/addnote' element={<Addnote/>}/>
           <Route path='/notedetails' element={<Notedetails/>}/>
           
           <Route path="/notedetails/:id" element={<Updatenote/>}/>
-=======
           <Route path='/addnewquiz' element={<AddQuiz/>}/>
           <Route path='/displayquiz' element={<DisplayQuiz/>}/>
           <Route path='/quizintro' element={<QuizIntro/>}/>
@@ -49,7 +47,6 @@ function App() {
               </ProtectedRoute>
             }
           />
->>>>>>> Stashed changes
         </Routes>
       </React.Fragment>
     </div>

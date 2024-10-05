@@ -49,7 +49,7 @@ function Note(props) {
        <div className="card" style={{width: '34rem'}}>
    
    <div className="card-body" >
-     <h5 className="card-title">Note Display</h5>
+     <h5 className="card-title" style={{fontSize:'30px'}}>Note Display</h5>
      {/* <h2>ID:{_id}</h2> */}
       <h2 className="black-text">Name:{name}</h2>
       <h2 className="black-text">Note:{note}</h2>

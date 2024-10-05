@@ -1,0 +1,94 @@
+/* General container styling */
+.update-bookmark-container {
+    min-height: 100vh;
+    background: url('../../Home/img/banner.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    
+  }
+  
+  /* Navbar styling */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ensures the navbar takes up the full width */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;  /* Makes sure the navbar stays on top */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Heading styling */
+  h1 {
+    font-size: 2.5rem;
+    color: rgb(58, 2, 2);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form container */
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Form groups */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  

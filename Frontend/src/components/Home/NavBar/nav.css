@@ -1,0 +1,61 @@
+.nav_con_user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+/* Logo styling */
+.nav_logo_user {
+  height: 50px;
+  width: auto;
+}
+
+/* Main title styling */
+.app_topic h1 {
+  font-weight: bold;
+  text-align: left;
+  font-size: 2rem;
+  color: #f5ba13;
+  margin: 0;
+  font-family:'webfont' Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation items */
+.nav_item_user {
+  display: flex;
+  gap: 20px;
+}
+
+.navitem {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover effect for navigation items */
+.navitem:hover {
+  color: #f5ba13;
+  font-weight: bold;
+}
+
+/* Responsive design: Adjusting for smaller screens */
+@media (max-width: 768px) {
+  .nav_con_user {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app_topic h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav_item_user {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

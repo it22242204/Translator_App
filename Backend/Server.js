@@ -1,10 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 const app = express();
 const cors = require("cors")
-const taskRoutes = require('./routes/taskRoutes')
 
+// import routes
+const taskRoutes = require('./routes/taskRoutes')
+const router=require("./routes/BookMarkRoutes");
+
+// Mddleware
+app.use(cors())
 app.use(express.json());
 
 // app.get("/",(req,res) => {
@@ -12,8 +18,10 @@ app.use(express.json());
 // });
 
 //db connection
-app.use(cors())
 app.use("/api/tasks",taskRoutes)
+app.use("/BookMark",router);
+
+
 
 mongoose
   .connect(process.env.MONGO_URI)

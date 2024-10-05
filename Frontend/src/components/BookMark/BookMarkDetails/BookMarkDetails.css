@@ -1,0 +1,152 @@
+/* General container styling */
+.bookmark-container {
+  min-height: 100vh;
+  background: url('../../Home/img/banner.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Navbar styling */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 1000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ensure content starts below the navbar */
+.content {
+  padding-top: 80px; /* Adjust this according to the height of your navbar */
+  text-align: center;
+  color: white;
+}
+
+/* Styling for the heading */
+.heading {
+  margin-top: 10px;
+  font-size: 2.5rem;
+  color: rgb(58, 2, 2);
+}
+
+/* Search container styling */
+.search-container {
+  display: flex;
+  justify-content: space-between; /* Space between search area and button */
+  align-items: center; /* Align vertically */
+  margin: 20px; /* Margin for spacing */
+}
+
+/* Styling for search area */
+.search-area {
+  display: flex; /* Use flex to align input and button */
+}
+
+/* Styling for search bar */
+.search-bar {
+  padding: 10px;
+  width: 200px; /* Set width for medium size */
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the search button */
+.btn-search {
+  padding: 10px 20px; /* Adjusted padding for button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  min-width: 100px; /* Set a minimum width for the button */
+}
+
+.btn-search:hover {
+  background-color: #0056b3;
+}
+
+/* Bookmark list styling */
+.bookmark-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bookmark-card {
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: black;
+}
+
+.bookmark-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* General button styling */
+.btn {
+  padding: 10px 20px;
+  background-color: #28a745; /* Green color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px; /* Add margin between buttons */
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* Download Report button styling */
+.no-print {
+  background-color: #007bff; /* Primary blue color for download button */
+}
+
+.no-print:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .bookmark-card {
+    padding: 15px;
+  }
+
+  .btn-search {
+    width: 100%; /* Adjust for smaller screens */
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Hide elements when printing */
+@media print {
+  .no-print {
+    display: none;
+  }
+}

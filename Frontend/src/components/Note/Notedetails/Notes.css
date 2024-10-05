@@ -1,0 +1,89 @@
+.notes-container{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;  
+ margin-top: -350px;
+  /* // Optional: Add some spacing between cards */
+}
+
+.hed1{
+    text-align: center;
+}
+
+/* style={{ backgroundImage: `url(${bgimg})`, backgroundSize: "cover" ,position:"sticky",WebkitPosition: "sticky", 
+      MozPosition: "sticky",}} */
+#downloadreport{
+  margin-right: 250px;
+  background-color:blue;
+}
+
+.search{
+   margin-left: 35px; 
+   width: 230px; 
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  border-radius: 10px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.searchbtn{
+  background-color: #05043f;
+  color: white;
+  border: 2px solid #05043f;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 2px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  height: 35px;
+  width: 100px;
+  margin-left: 5px;
+}
+.notepic{
+ width: 330px;
+ margin-top: -310px;
+ margin-left: 40px;
+ height: 350px;
+ border-radius: 10px;
+}
+.notepic2{
+  width: 330px;
+  margin-top: 70px;
+  margin-left: 1150px;
+  height: 350px;
+  border-radius: 10px;
+}
+.text2{
+  text-align: right;
+  margin-right: 25px;
+  font-size: 30px;
+  font-weight:700;
+  color:#05043f;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+}
+
+.theme1 {
+  text-align:justify;
+  margin-left: 1080px; /* Adjust the margin as needed */
+  font-family: Arial, sans-serif; /* Optional: Specify font family */
+  font-size: 16px; /* Optional: Adjust font size */
+  color: #333; /* Optional: Adjust text color */
+  margin-right: 20px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  font-style:oblique;
+  color:#05043f;
+}
+
+
+

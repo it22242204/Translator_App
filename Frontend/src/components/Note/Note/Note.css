@@ -1,0 +1,29 @@
+.nav_btn_log {
+    background-color: #05043f;
+    color: white;
+    border: 2px solid #05043f;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  .nav_btn_regi {
+    color: #05043f;
+    background-color: white;
+    border: 2px solid #05043f;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  .black-text{
+    color:black;
+  }

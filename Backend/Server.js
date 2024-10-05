@@ -8,6 +8,7 @@ const cors = require("cors")
 // import routes
 const taskRoutes = require('./routes/taskRoutes')
 const router=require("./routes/BookMarkRoutes");
+const noterouter=require('./routes/Noteroutes');
 
 // Mddleware
 app.use(cors())
@@ -20,6 +21,7 @@ app.use(express.json());
 //db connection
 app.use("/api/tasks",taskRoutes)
 app.use("/BookMark",router);
+app.use("/notes",noterouter);
 
 
 

@@ -1,19 +1,12 @@
 import { useState } from "react";
 import "./Translator.css";
 import { AiOutlineClose } from "react-icons/ai";
-import { addTaskToServer } from "../slices/tasksSlice";
 import { useDispatch } from "react-redux";
-
 import TextToSpeech from "../components/Voice/TextToSpeech";
-import SpeechToText from "../components/Voice/SpeechToText";
-//jeethus's
 import { useEffect } from "react"; 
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faMicrophone, faStop, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-//jeethu's
-
-
 import { useNavigate } from "react-router-dom";
 
 
@@ -28,6 +21,10 @@ const Translator = () => {
   const [isTranslated, setIsTranslated] = useState(null); // Translation status state
   const [selectedImage, setSelectedImage] = useState(null); // Image input state
   const [translatedImageText, setTranslatedImageText] = useState(""); // Image translation output state
+  const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
+  const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
+  const { transcript, resetTranscript } = useSpeechRecognition(); // Hook to manage speech recognition transcript
+  const [listening, setListening] = useState(false); 
 
 
   // Text translation function using RapidAPI
@@ -128,14 +125,6 @@ const Translator = () => {
     resetTranscript();
   };
 
-
-  //jeethu's for a try
-  const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
-  const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
-  const { transcript, resetTranscript } = useSpeechRecognition(); // Hook to manage speech recognition transcript
-  const [listening, setListening] = useState(false); 
-  //const [language, setLanguage] = useState('en-US'); // Single language state
-
   useEffect(() => { 
     if (listening) {
         try {
@@ -194,7 +183,7 @@ const Translator = () => {
                 e.preventDefault(); 
                 setListening(true); 
             }}>
-                <FontAwesomeIcon icon={faMicrophone} style={{ color: 'green' }}  /> {/* Microphone icon */}
+                <FontAwesomeIcon icon={faMicrophone} /> {/* Microphone icon */}
             </button>
             <button onClick={(e) => { // Button to stop listening
                 e.preventDefault(); 

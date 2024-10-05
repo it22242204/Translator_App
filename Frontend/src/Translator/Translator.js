@@ -3,10 +3,7 @@ import "./Translator.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { addTaskToServer } from "../slices/tasksSlice";
 import { useDispatch } from "react-redux";
-<<<<<<< HEAD
-//Updated upstream
-=======
->>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
+
 import TextToSpeech from "../components/Voice/TextToSpeech";
 import SpeechToText from "../components/Voice/SpeechToText";
 //jeethus's
@@ -15,13 +12,10 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faMicrophone, faStop, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 //jeethu's
-<<<<<<< HEAD
+
 
 import { useNavigate } from "react-router-dom";
-// Stashed changes
-=======
-import { useNavigate } from "react-router-dom";
->>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
+
 
 const Translator = () => {
   const dispatch = useDispatch();
@@ -134,10 +128,7 @@ const Translator = () => {
     resetTranscript();
   };
 
-<<<<<<< HEAD
-// Updated upstream
-=======
->>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
+
   //jeethu's for a try
   const [sourceLanguage, setSourceLanguage] = useState('en-US'); // source language
   const [targetLanguage, setTargetLanguage] = useState('si-LK'); // target language
@@ -162,10 +153,7 @@ const Translator = () => {
     }
 }, [listening, sourceLanguage, transcript]); // Include transcript in the dependencies
   //jeethu's end
-<<<<<<< HEAD
 
-=======
->>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
   const handleAddBookmark = () => {
     console.log("Navigating to AddBookmark with data:", {
       inputText,
@@ -180,10 +168,7 @@ const Translator = () => {
     });
   };
   
-<<<<<<< HEAD
-//Stashed changes
-=======
->>>>>>> 31404ea0523e3896914a78b3911be37d90daa76c
+
 
   return (
     <section className="translator">

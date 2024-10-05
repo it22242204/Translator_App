@@ -16,7 +16,7 @@ function QuizAdmin() {
 
   const fetchQuizzes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/Backend/quiz/displayquiz");
+      const response = await axios.get("http://localhost:4000/Backend/quiz/displayquiz");
       setQuizzes(response.data);
     } catch (error) {
       console.error("Error fetching quizzes:", error);
@@ -25,7 +25,7 @@ function QuizAdmin() {
 
   const handleDelete = async (quizId) => {
     try {
-      await axios.delete(`http://localhost:5000/Backend/quiz/deletequiz/${quizId}`);
+      await axios.delete(`http://localhost:4000/Backend/quiz/deletequiz/${quizId}`);
       setQuizzes(quizzes.filter((quiz) => quiz._id !== quizId));
     } catch (error) {
       console.error("Error deleting quiz:", error);
@@ -34,7 +34,7 @@ function QuizAdmin() {
 
   const handleUpdateAnswer = async (quizId) => {
     try {
-      await axios.patch(`http://localhost:5000/Backend/quiz/updatequiz/${quizId}`, {
+      await axios.patch(`http://localhost:4000/Backend/quiz/updatequiz/${quizId}`, {
         correctanswer: newAnswer,
       });
       setQuizzes(quizzes.map(quiz => quiz._id === quizId ? { ...quiz, correctAnswer: newAnswer } : quiz));

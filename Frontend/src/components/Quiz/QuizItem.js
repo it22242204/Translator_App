@@ -5,7 +5,7 @@ function QuizItem({quiz,onClose}){
     const[newAnswer,setNewAnswer] = useState("");
 
     const handleUpdateAnswer = () => {
-        axios.patch(`http://localhost:5000/Backend/quiz/updatequiz/${quizId}`)
+        axios.patch(`http://localhost:4000/Backend/quiz/updatequiz/${quizId}`)
         .then((response)=>{
             console.log("Correct Answer updated successfully",response.data);
             onClose();

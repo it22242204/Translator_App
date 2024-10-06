@@ -108,17 +108,19 @@ textarea::placeholder,
 }
 
 .btn-translate {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #0056b3;
+  padding: 10px;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  margin: 10px; /* Add margin between buttons */
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .btn-translate:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
 }
 
 .form-select {

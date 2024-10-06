@@ -19,7 +19,7 @@ function Nav() {
             <div className="nav_item_user">
               <h3 
               className='navitem' 
-              onClick={() => navigate("/mainhome")}
+              onClick={() => navigate("/")}
               >
                 Home
               </h3>

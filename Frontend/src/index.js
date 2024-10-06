@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // Correct import
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux'; // Import Provider
 import { store } from './store'; // Import your store

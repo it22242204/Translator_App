@@ -1,0 +1,59 @@
+  .language-select{
+    margin-left: 30px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .start {
+    background-color: #28a745; /* Green color for the button */
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Add margin between buttons */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  .stop {
+    background-color: red;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Add margin between buttons */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+
+  .speaker {
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Add margin between buttons */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  /* Add responsive behavior for larger screens */
+  @media (min-width: 768px) {
+    .top-row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .top-row label {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
+  
+    .form-select {
+      max-width: 300px; /* Adjust this width as needed */
+    }
+  }
+  

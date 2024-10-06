@@ -1,55 +1,59 @@
+/* Header.css */
+
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 15px 30px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-img {
-    height: 50px; 
-    width: auto;
-    margin-right: 10px; 
-  }
-  
-  h2 {
-    margin-left: 20px; 
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #f2f2f2;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    text-transform: uppercase;
-    font-size: 1em;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background-color: #575757;
-    border-radius: 5px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 2px solid #f0f0f0; /* Subtle bottom border for header separation */
+  background-color: #e1e1e1; /* Gray background for header */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.text {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #7e7e7e;
+  white-space: nowrap; /* Keeps "Ceylon Speaks" on one line */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Aligns the navigation links to the left */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px; /* Rounded corners for hover effect */
+}
+
+.nav-links a:hover {
+  background-color: #cebcbc;
+  color: #ffffff; /* White text on hover for contrast */
+}

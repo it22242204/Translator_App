@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faVolumeUp } from "@fortawesome/free-solid-svg-icons"; 
+import "./Voice.css";
 
 const TextToSpeech = ({ text, language }) => { // TextToSpeech component, accepting text and language as props
     const handleTextToSpeech = (e) => { // function to handle text-to-speech functionality
@@ -10,7 +11,7 @@ const TextToSpeech = ({ text, language }) => { // TextToSpeech component, accept
     };
   
     return (
-        <button onClick={handleTextToSpeech}> {/* Button to trigger text-to-speech */}
+        <button onClick={handleTextToSpeech} className='speaker'> {/* Button to trigger text-to-speech */}
             <FontAwesomeIcon icon={faVolumeUp} />
         </button>
     );

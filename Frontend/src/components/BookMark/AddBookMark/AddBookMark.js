@@ -85,6 +85,7 @@ function AddBookmark() {
               onChange={handleChange}
               value={inputs.originalText} // Display originalText
               required
+              readOnly
             />
           </div>
           <div className='bk_m'>
@@ -95,6 +96,7 @@ function AddBookmark() {
               onChange={handleChange}
               value={inputs.translatedText} // Display translatedText
               required
+              readOnly
             />
           </div>
           <div className='bk_m'>

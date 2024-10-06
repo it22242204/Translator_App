@@ -26,30 +26,22 @@ function App() {
       <React.Fragment>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/mainhome" element={<Home/>}/>
           <Route path='/AddBookMark' element={<AddBookmark/>}/>
           <Route path='/bookmarkdetails' element={<BookMarkDetails/>}/>
           <Route path="/updatebookmark/:id" element={<UpdateBookmark/>}/>
-<<<<<<< Updated upstream
+
           <Route path='/addnote' element={<Addnote/>}/>
           <Route path='/notedetails' element={<Notedetails/>}/>
-          
-          <Route path="/notedetails/:id" element={<Updatenote/>}/>
-=======
+           <Route path="/notedetails/:id" element={<Updatenote/>}/>
+
           <Route path='/addnewquiz' element={<AddQuiz/>}/>
           <Route path='/displayquiz' element={<DisplayQuiz/>}/>
           <Route path='/quizintro' element={<QuizIntro/>}/>
           <Route path='/quizadmin' element={<QuizAdmin/>}/>
+
           <Route path="/login" element={<AdminLogin />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <QuizAdmin />
-              </ProtectedRoute>
-            }
-          />
->>>>>>> Stashed changes
+          <Route path="/admin" element={<ProtectedRoute><QuizAdmin /></ProtectedRoute>} />
+          
         </Routes>
       </React.Fragment>
     </div>

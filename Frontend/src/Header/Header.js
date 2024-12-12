@@ -15,6 +15,7 @@ const Header = () => {
           <li><a href="/bookmarkdetails">BookMark</a></li>
           <li><a href="/quizintro">Quiz</a></li>
           <li><a href="/notedetails">Notes</a></li>
+          <li><a href="/login">Admin</a></li>
         </ul>
       </nav>
     </header>

@@ -52,7 +52,7 @@ const Home = () => {
 
         <form onSubmit={handleSubmit}>
           <input type="file" onChange={handleImageChange} accept="image/*" />
-          <button type="submit" className="btn btn-upload">Translate Image</button>
+          <button type="submit" className="btn btnupload">Translate Image</button>
         </form>
 
         {/* Display the translated text */}

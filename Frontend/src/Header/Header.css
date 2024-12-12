@@ -28,6 +28,7 @@
 }
 
 .navbar {
+  margin-left: 70px;
   display: flex;
   justify-content: flex-start; /* Aligns the navigation links to the left */
 }

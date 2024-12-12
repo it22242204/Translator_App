@@ -53,7 +53,7 @@ function QuizAdmin() {
     <div className="background" style={{ backgroundColor: "#FCE8E0" }}>
       <Nav/>
       <button className="add-button" onClick={() => navigate("/addnewquiz")}>Add Questions</button>
-      <h2>Implemented Quizzes</h2>
+      <h2 className="quiztopic">Implemented Quizzes</h2>
       <div>
         {quizzes.map((quiz, index) => (
           <div key={quiz._id} className="container" style={{ backgroundColor: "white"}}>

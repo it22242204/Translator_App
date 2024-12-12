@@ -24,8 +24,8 @@ h1 {
     text-align: center;
     
 }
-h2 {
-    color: #faff5a; 
+.quiztopic {
+    color: black; 
     margin-bottom: 1em;
     text-align: center;
     font-size: 3em;

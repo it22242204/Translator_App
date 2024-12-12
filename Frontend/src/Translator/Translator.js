@@ -166,7 +166,20 @@ const Translator = () => {
       },
     });
   };
+ 
+  const handleAddNote =() => {
+    console.log("Navigating to addnote with data:", {
+      inputText,
+      translatedText: outputText,
+    });
 
+    navigate("/addnote", {
+      state: {
+        inputText,
+        translatedText: outputText,
+      },
+    });
+  };
   const handleTranslation = async () => {
     setIsTranslating(true); // Start translation
     try {
@@ -247,7 +260,7 @@ const Translator = () => {
             <button
               className="btn btn-primary me-md-2"
               type="button"
-              onClick={() => navigate("/addnote")}
+              onClick={handleAddNote}
             >
               Add Notes
             </button>

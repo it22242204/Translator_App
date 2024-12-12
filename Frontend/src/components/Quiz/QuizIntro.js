@@ -1,5 +1,4 @@
 import React from "react";
-// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './quizstyle/QuizIntro.css';
 import Headers from '../../Header/Header';
@@ -8,6 +7,7 @@ function QuizIntro(){
   const navigate = useNavigate();
 
   const handleStart = () => {
+    navigate('/displayquiz');
     navigate('/displayquiz');
   };
 
@@ -32,6 +32,7 @@ function QuizIntro(){
       </div>
     </div>
   );
+
 };
 
 export default QuizIntro;

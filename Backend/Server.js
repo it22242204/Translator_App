@@ -9,7 +9,7 @@ const cors = require("cors")
 const taskRoutes = require('./routes/taskRoutes')
 const router=require("./routes/BookMarkRoutes");
 const noterouter=require('./routes/Noteroutes');
-const quizRouter = require("./Routes/quizgameroutes.js");
+const quizRouter = require("./routes/quizgameroutes");
 
 // Mddleware
 app.use(cors())

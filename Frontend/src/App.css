@@ -35,9 +35,9 @@ input[type="file"] {
 }
 
 /* Button styling */
-.btn-upload {
+.btnupload {
   background-color: #007bff; /* Bootstrap primary color */
-  color: #fff;
+  color: #151212;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
